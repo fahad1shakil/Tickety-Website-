@@ -1,18 +1,24 @@
-# React + Vite
+1. What is JSX, and why is it used? 
+JSX is a syntax extension for JavaScript that allows you to write HTML-like code within JS. Although it looks like HTML, it is actually JavaScript.
+Why it is used: It makes the code easier to write and cleaner to read. It allows you to use JS logic or variables directly inside your HTML.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+2. What is the difference between State and Props?
+Props (Properties): This is data passed from a Parent component to a Child component. The Child component cannot change the Props (it is Read-only).
+State: This is the component's own internal data or memory. The component can change its own State as needed.
+Main Difference: Props come from outside and cannot be changed, while State exists inside the component and can be changed.
 
-Currently, two official plugins are available:
+3. What is the useState hook, and how does it work? 
+useState is a React function (Hook) used to store State or data inside functional components.
+How it works: It takes an initial value and returns two things:
+The current data or value.
+A function to update that value (setter function).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+4. How can you share state between components in React? 
+In React, data always flows from top to bottom (Parent to Child). To share data between two components, you use the "Lifting State Up" method.
+This means you must move the State to the common parent of both components and then pass the data down to them via Props.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Tickety-Website-
-# Ticket-react-website
+5. How is event handling done in React?
+ It is similar to standard HTML, but there are a few differences:
+Event names must be written in camelCase (e.g., write onClick instead of onclick).
+You must pass the actual function definition, not a string.
+To stop default browser behavior, you must explicitly call e.preventDefault() instead of using return false.
